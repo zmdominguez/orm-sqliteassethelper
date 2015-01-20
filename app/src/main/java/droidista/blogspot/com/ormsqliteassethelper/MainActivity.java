@@ -60,7 +60,7 @@ public class MainActivity extends ActionBarActivity {
      */
     public static class PlaceholderFragment extends Fragment {
 
-        OrmDbHelper databaseHelper;
+        OrmDbHelper mOrmDbHelper;
 
         public PlaceholderFragment() {
         }
@@ -71,14 +71,19 @@ public class MainActivity extends ActionBarActivity {
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
             TextView textView = (TextView) rootView.findViewById(R.id.sample_text);
-            textView.setText("");
 
-            databaseHelper = getHelper();
+            // Usually, you should try and NOT do DB operations in onCreateView.
+            // But for demo purposes, let's break the rules.
+            mOrmDbHelper = getHelper();
             try {
-                Dao<Employee, Integer> employeeDao = databaseHelper.getEmployeeDao();
-                List<Employee> employeeList = employeeDao.queryForAll();
-                if(!employeeList.isEmpty()) {
-                    Employee employee = employeeList.get(0);
+
+                Dao<Employee, Integer> employeeDao = mOrmDbHelper.getEmployeeDao();
+
+                // Try to get the first entry in the table
+                Employee employee = employeeDao.queryBuilder().queryForFirst();
+                if(employee == null) {
+                    textView.setText("No employees found!");
+                } else {
                     textView.setText(employee.toString());
                 }
             } catch (SQLException e) {
@@ -92,10 +97,10 @@ public class MainActivity extends ActionBarActivity {
          * You'll need this in your class to get the helper from the manager once per class.
          */
         private OrmDbHelper getHelper() {
-            if (databaseHelper == null) {
-                databaseHelper = new OrmDbHelper(getActivity());
+            if (mOrmDbHelper == null) {
+                mOrmDbHelper = new OrmDbHelper(getActivity());
             }
-            return databaseHelper;
+            return mOrmDbHelper;
         }
     }
 }

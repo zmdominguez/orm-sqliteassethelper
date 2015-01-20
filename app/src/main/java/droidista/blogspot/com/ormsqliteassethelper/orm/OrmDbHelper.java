@@ -46,7 +46,7 @@ public class OrmDbHelper extends SQLiteAssetHelper {
 
     /**
      *
-     * @return Dao we need
+     * @return Dao we need to access the Employees table
      *
      * @throws java.sql.SQLException
      */
