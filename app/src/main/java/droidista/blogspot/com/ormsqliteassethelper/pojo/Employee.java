@@ -12,194 +12,195 @@ import java.util.Date;
 @DatabaseTable(tableName = "Employees")
 public class Employee {
 
-    @DatabaseField(id = true)
-    int EmployeeID;
+    @DatabaseField(id = true, columnName = "EmployeeID")
+    int employeeId;
 
-    @DatabaseField
-    String LastName;
+    @DatabaseField(columnName = "LastName")
+    String lastName;
 
-    @DatabaseField
-    String FirstName;
+    @DatabaseField(columnName = "FirstName")
+    String firstName;
 
-    @DatabaseField
-    String Title;
+    @DatabaseField(columnName = "Title")
+    String title;
 
-    @DatabaseField
-    String TitleOfCourtesy;
+    @DatabaseField(columnName = "TitleOfCourtesy")
+    String titleOfCourtesy;
 
-    @DatabaseField(dataType = DataType.DATE_STRING, format = "yyyy-MM-dd")
-    Date BirthDate;
+    @DatabaseField(columnName = "BirthDate", dataType = DataType.DATE_STRING, format = "yyyy-MM-dd")
+    Date birthDate;
 
-    @DatabaseField(dataType = DataType.DATE_STRING, format = "yyyy-MM-dd")
-    Date HireDate;
+    @DatabaseField(columnName = "HireDate", dataType = DataType.DATE_STRING, format = "yyyy-MM-dd")
+    Date hireDate;
 
-    @DatabaseField
-    String Address;
+    @DatabaseField(columnName = "Address")
+    String address;
 
-    @DatabaseField
-    String City;
+    @DatabaseField(columnName = "City")
+    String city;
 
-    @DatabaseField
-    String Region;
+    @DatabaseField(columnName = "Region")
+    String region;
 
-    @DatabaseField
-    String PostalCode;
+    @DatabaseField(columnName = "PostalCode")
+    String postalCode;
 
-    @DatabaseField
-    String Country;
+    @DatabaseField(columnName = "Country")
+    String country;
 
-    @DatabaseField
-    String HomePhone;
+    @DatabaseField(columnName = "HomePhone")
+    String homePhone;
 
-    @DatabaseField
-    String Extension;
+    @DatabaseField(columnName = "Extension")
+    String extension;
 
-    @DatabaseField(dataType = DataType.BYTE_ARRAY)
-    byte[] Photo;
+    @DatabaseField(columnName = "Photo", dataType = DataType.BYTE_ARRAY)
+    byte[] photo;
 
-    @DatabaseField
-    String Notes;
+    @DatabaseField(columnName = "Notes")
+    String notes;
 
+    // Set this up as a reference, we're ignoring for now
 //    @DatabaseField
 //    int ReportsTo;
 
-    @DatabaseField
-    String PhotoPath;
+    @DatabaseField(columnName = "PhotoPath")
+    String photoPath;
 
-    public int getEmployeeID() {
-        return EmployeeID;
+    public int getEmployeeId() {
+        return employeeId;
     }
 
-    public void setEmployeeID(int employeeID) {
-        EmployeeID = employeeID;
+    public void setEmployeeId(int employeeID) {
+        employeeID = employeeID;
     }
 
     public String getLastName() {
-        return LastName;
+        return lastName;
     }
 
     public void setLastName(String lastName) {
-        LastName = lastName;
+        this.lastName = lastName;
     }
 
     public String getFirstName() {
-        return FirstName;
+        return firstName;
     }
 
     public void setFirstName(String firstName) {
-        FirstName = firstName;
+        this.firstName = firstName;
     }
 
     public String getTitle() {
-        return Title;
+        return title;
     }
 
     public void setTitle(String title) {
-        Title = title;
+        this.title = title;
     }
 
     public String getTitleOfCourtesy() {
-        return TitleOfCourtesy;
+        return titleOfCourtesy;
     }
 
     public void setTitleOfCourtesy(String titleOfCourtesy) {
-        TitleOfCourtesy = titleOfCourtesy;
+        this.titleOfCourtesy = titleOfCourtesy;
     }
 
     public Date getBirthDate() {
-        return BirthDate;
+        return birthDate;
     }
 
     public void setBirthDate(Date birthDate) {
-        BirthDate = birthDate;
+        this.birthDate = birthDate;
     }
 
     public Date getHireDate() {
-        return HireDate;
+        return hireDate;
     }
 
     public void setHireDate(Date hireDate) {
-        HireDate = hireDate;
+        this.hireDate = hireDate;
     }
 
     public String getAddress() {
-        return Address;
+        return address;
     }
 
     public void setAddress(String address) {
-        Address = address;
+        this.address = address;
     }
 
     public String getCity() {
-        return City;
+        return city;
     }
 
     public void setCity(String city) {
-        City = city;
+        this.city = city;
     }
 
     public String getRegion() {
-        return Region;
+        return region;
     }
 
     public void setRegion(String region) {
-        Region = region;
+        this.region = region;
     }
 
     public String getPostalCode() {
-        return PostalCode;
+        return postalCode;
     }
 
     public void setPostalCode(String postalCode) {
-        PostalCode = postalCode;
+        this.postalCode = postalCode;
     }
 
     public String getCountry() {
-        return Country;
+        return country;
     }
 
     public void setCountry(String country) {
-        Country = country;
+        this.country = country;
     }
 
     public String getHomePhone() {
-        return HomePhone;
+        return homePhone;
     }
 
     public void setHomePhone(String homePhone) {
-        HomePhone = homePhone;
+        this.homePhone = homePhone;
     }
 
     public String getExtension() {
-        return Extension;
+        return extension;
     }
 
     public void setExtension(String extension) {
-        Extension = extension;
+        this.extension = extension;
     }
 
     public byte[] getPhoto() {
-        return Photo;
+        return photo;
     }
 
     public void setPhoto(byte[] photo) {
-        Photo = photo;
+        this.photo = photo;
     }
 
     public String getNotes() {
-        return Notes;
+        return notes;
     }
 
     public void setNotes(String notes) {
-        Notes = notes;
+        this.notes = notes;
     }
 
     public String getPhotoPath() {
-        return PhotoPath;
+        return photoPath;
     }
 
     public void setPhotoPath(String photoPath) {
-        PhotoPath = photoPath;
+        this.photoPath = photoPath;
     }
 
 
@@ -213,23 +214,23 @@ public class Employee {
     @Override
     public String toString() {
         return "Employee{" +
-                "EmployeeID=" + EmployeeID +
-                ", LastName='" + LastName + '\'' +
-                ", FirstName='" + FirstName + '\'' +
-                ", Title='" + Title + '\'' +
-                ", TitleOfCourtesy='" + TitleOfCourtesy + '\'' +
-                ", BirthDate=" + BirthDate +
-                ", HireDate=" + HireDate +
-                ", Address='" + Address + '\'' +
-                ", City='" + City + '\'' +
-                ", Region='" + Region + '\'' +
-                ", PostalCode='" + PostalCode + '\'' +
-                ", Country='" + Country + '\'' +
-                ", HomePhone='" + HomePhone + '\'' +
-                ", Extension='" + Extension + '\'' +
-                ", Photo='" + Photo + '\'' +
-                ", Notes='" + Notes + '\'' +
-                ", PhotoPath='" + PhotoPath + '\'' +
+                "EmployeeID=" + employeeId +
+                ", lastName='" + lastName + '\'' +
+                ", FirstName='" + firstName + '\'' +
+                ", Title='" + title + '\'' +
+                ", TitleOfCourtesy='" + titleOfCourtesy + '\'' +
+                ", BirthDate=" + birthDate +
+                ", HireDate=" + hireDate +
+                ", Address='" + address + '\'' +
+                ", City='" + city + '\'' +
+                ", Region='" + region + '\'' +
+                ", PostalCode='" + postalCode + '\'' +
+                ", Country='" + country + '\'' +
+                ", HomePhone='" + homePhone + '\'' +
+                ", Extension='" + extension + '\'' +
+                ", Photo='" + photo + '\'' +
+                ", Notes='" + notes + '\'' +
+                ", PhotoPath='" + photoPath + '\'' +
                 '}';
     }
 }
